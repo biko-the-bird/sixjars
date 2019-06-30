@@ -5,11 +5,18 @@ describe('balance reducer', () => {
     
     var jars = constants.INIT_JARS;
     describe("when initalizing", () => {
-              
+        const action =  {type: constants.SET_JARS, jars};
         it("sets 6 empty jars keys in a object", () => {
             expect(balanceReducer(undefined,
-                 {type: constants.SET_JARS, jars}))
+                action))
                  .toEqual(jars);
+        })
+        it("is an object", () => {
+            expect(typeof(balanceReducer(undefined,
+                action))).toEqual("object");
+        });
+        it("has a key for NEC set to 0", () => {
+            expect(balanceReducer(undefined, action)[constants.NEC]).toEqual(0);
         })
     });
 

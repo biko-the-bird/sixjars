@@ -6,8 +6,14 @@ import {read_cookie, bake_cookie} from 'sfcookies';
 
 const balance = (prevState = constants.INIT_JARS, action) => {
     let balance;
-    const oldJars = read_cookie(constants.JARS_COOKIE) || prevState;
-    
+    const oldJars = (read_cookie(constants.JARS_COOKIE)[constants.NEC] && read_cookie(constants.JARS_COOKIE)) || prevState;
+    console.log(
+        read_cookie(constants.JARS_COOKIE),
+        prevState,
+        read_cookie(constants.JARS_COOKIE) || prevState,
+        (read_cookie(constants.JARS_COOKIE)[constants.NEC] && read_cookie(constants.JARS_COOKIE)),
+        read_cookie(constants.JARS_COOKIE) === new Array()
+        );
     switch (action.type) {
         case constants.SET_JARS:
             balance = action.jars;
@@ -15,9 +21,12 @@ const balance = (prevState = constants.INIT_JARS, action) => {
         case constants.WITHDRAW_JAR:
             balance = oldJars;
             var difference =  balance[action.jar] - action.amount;
+            //we don't allow jars to contain negative amounts
             balance[action.jar] = (difference >= 0) ? difference : 0;
+            break;
         default:
             balance = oldJars;
+            console.log(oldJars, balance,"set");
     }
     console.log("reducer balance", balance);
     bake_cookie(constants.JARS_COOKIE, balance);

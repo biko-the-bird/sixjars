@@ -8,7 +8,8 @@ import * as constants from '../redux/constants';
 
 describe("balance", () => {
     const mockSetJars = jest.fn();
-    const balance = shallow(<Balance setJars={mockSetJars} jars={constants.INIT_JARS}/>);
+    const mockWithdrawJar = jest.fn();
+    const balance = shallow(<Balance setJars={mockSetJars} jars={constants.INIT_JARS} withdrawJar={mockWithdrawJar}/>);
     it("renders", () => {
         expect(balance).toMatchSnapshot();
     })
