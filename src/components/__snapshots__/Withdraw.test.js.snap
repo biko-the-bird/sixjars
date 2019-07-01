@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Withdraw renders properly 1`] = `ShallowWrapper {}`;

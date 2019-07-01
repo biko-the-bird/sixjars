@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import {Card, Text, Heading, Box} from 'rebass';
+
 import { setJars, withdrawJar } from "../redux/actions/balance";
 import { updateJars } from "../helpers";
 import * as constants from '../redux/constants';
@@ -46,57 +48,22 @@ export class Balance extends Component {
     var keys = Object.keys(this.props.jars);
     return (
       <div>
-        Total Balance: ${total.toFixed(2)}
-        <div>
-          <label>Deposit</label>
-          <input
-            type="number"
-            className="deposit-input"
-            value={this.state.deposit}
-            onChange={e => this.setState({ deposit: e.target.value })}
-          />
-          <button className="deposit-btn" onClick={() => this.handleDeposit()}>
-            Deposit
-          </button>
-        </div>
-        <ul>
+        <Heading as="h2">Total Balance: ${total.toFixed(2)}</Heading>
+        <div className="balances-container">
           {keys.map(k => {
             return (
-              <li key={k}>
-                {k}: ${this.props.jars[k].toFixed(2)}
-              </li>
+              <div key={k} 
+              className="balance-card"
+              >
+                <Heading as="h4">{k}</Heading>
+                <Text className="balance-text">${this.props.jars[k].toFixed(2)}</Text>
+              </div>
             );
           })}
-        </ul>
-        <hr/>
-        <div>
-<h3>Make a withdraw</h3>
         </div>
-        <select id="jar-selector" onChange={e => this.setState({withdrawJar: e.target.value})}>
-          {keys.map(key => {
-            return (
-              <option value={key} key={key}>
-                {key} 
-              </option>
-            );
-          })}
-        </select>
-        
-        <br/>
-        <input
-            type="number"
-            className="withdraw-input"
-            value={this.state.withdraw}
-            onChange={e => this.setState({withdraw: e.target.value})}
-          />
-          <button className="withdraw-btn" onClick={() => this.handleWithdraw()}>
-            Withdraw
-          </button>
-        
-          <br/>
-        <br/>
+
        
-      </div>
+        </div>
     );
   }
 }
