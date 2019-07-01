@@ -1,7 +1,6 @@
 # Six Jars Budgeting
 
-
-[coverage-badge-green]: ./coverage/badge-lines.svg
+A simple budgeting app for managing your income. Based on the system of T Harv Ekhr.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
