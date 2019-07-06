@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {Card, Text, Heading, Box} from 'rebass';
 
 import { setJars, withdrawJar } from "../redux/actions/balance";
-import { updateJars } from "../helpers";
+import { updateJars, isMobile } from "../helpers";
 import * as constants from '../redux/constants';
 
 export class Balance extends Component {
@@ -48,7 +48,7 @@ export class Balance extends Component {
     var keys = Object.keys(this.props.jars);
     return (
       <div>
-        <Heading as="h2">Total Balance: ${total.toFixed(2)}</Heading>
+        <div className="total-balance">Total Balance: ${total.toFixed(2)}</div>
         <div className="balances-container">
           {keys.map(k => {
             return (
@@ -57,6 +57,9 @@ export class Balance extends Component {
               >
                 <Heading as="h4">{k}</Heading>
                 <Text className="balance-text">${this.props.jars[k].toFixed(2)}</Text>
+                {!isMobile() && 
+                  <p>{constants.JAR_DESC[k]}</p>
+                }
               </div>
             );
           })}

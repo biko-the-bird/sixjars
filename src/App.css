@@ -15,8 +15,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(30px + 2vmin);
+  font-size: calc(80px + 2vmin);
   color: white;
+  border-bottom: 10px dashed white;
+}
+
+
+.footer-line {
+  text-align: center;
+  margin-right: 3%;
+  margin-left: 3%;
 }
 
 .App-link {

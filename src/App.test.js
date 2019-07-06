@@ -9,13 +9,18 @@ describe('App', () => {
     expect(app).toMatchSnapshot();
   });
 
-  it('contains a Connect(Balance) component', () => {
-    expect(app.find('Connect(Balance)').exists()).toBe(true);
-  });
+  
   it('contains a Connect(Deposit) component', () => {
     expect(app.find('Connect(Deposit)').exists()).toBe(true);
   });
   it('contains a Connect(Withdraw) component', () => {
     expect(app.find('Connect(Withdraw)').exists()).toBe(true);
   });
+  it('contains a Connect(AdvancedSetting) component', () => {
+    expect(app.find('Connect(AdvancedSetting)').exists()).toBe(true);
+  });
+  it('contains a VisContainer component', () => {
+    expect(app.find('VisContainer').exists()).toBe(true);
+  });
+  
 });

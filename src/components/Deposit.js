@@ -13,12 +13,15 @@ export class Deposit extends Component {
     }
 
     handleDeposit = () => {
-        const jars = updateJars(this.state.jars, this.props.jars);
+        const jars = updateJars(this.state.deposit, this.props.jars);
         this.props.setJars(jars);
+        console.log("deposited", jars);
         this.setState({deposit: 0});
     }
 
     render() {
+        
+        console.log("rerend");
         return (
             <div>
                   <label>Deposit</label>

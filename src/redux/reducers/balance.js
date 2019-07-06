@@ -10,7 +10,11 @@ const balance = (prevState = constants.INIT_JARS, action) => {
     
     switch (action.type) {
         case constants.SET_JARS:
-            balance = action.jars;
+            balance = oldJars;
+            var keys = Object.keys(action.jars);
+            keys.forEach(key => {
+                balance[key] = action.jars[key];
+            })
             break;
         case constants.WITHDRAW_JAR:
             balance = oldJars;

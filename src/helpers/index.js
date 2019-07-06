@@ -17,4 +17,8 @@ export const updateJars = ( deposit, jars) => {
         }
     });
     return jars;
-}
+};
+
+export const isMobile = () => {
+    return window.innerWidth <= 500;
+};

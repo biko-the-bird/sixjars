@@ -1,11 +1,20 @@
+
+html{
+  background-color: grey;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "lemon";
 }
+.bottom-jar {
+  border-radius: 6%;
+  background-color:#cbd6d0;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -25,14 +34,33 @@ button, input {
   margin: 2px;
 }
 
+
+
+
+.vis-container {
+  flex: left;
+  display: flex;
+  flex-direction: row;
+}
+.visualization-container {
+
+  float: right;
+  margin-top: auto;
+  margin-left: -10%;
+  margin-bottom: auto;
+  width: 200%;
+}
 .balances-container {
+  flex: left;
   display: flex;
   flex-direction: row;
   text-align: center;
-  padding: 5px;
-  margin: 5px;
   justify-content: center;
   flex-wrap: wrap;
+}
+.total-balance {
+  padding: 30px;
+  font-size: 40px;
 }
 
 .balance-text {
@@ -43,8 +71,26 @@ button, input {
   font-size: 6;
   width:20%;
   background-color: #a1cfc0;
-  border-radius: 8;
+  border-radius: 8px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
-  padding: 5px;
-  margin: 10px;
+  padding: 1%;
+  margin: 2%;
+
 }
+
+@font-face {
+  font-family: 'Lemon';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./font.otf') format('truetype'); /* IE6-IE8 */
+ 
+}
+
+
+
+.footer-copyright {
+  font-size: 9px;
+  color: grey;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
