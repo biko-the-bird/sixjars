@@ -6,8 +6,8 @@ import Deposit from './components/Deposit';
 import Withdraw from './components/Withdraw';
 import Footer from './components/Footer';
 import AdvancedSetting from './components/AdvancedSetting';
-import Visualization from './components/Visualization';
 import VisContainer from './components/VisContainer';
+import AuthLayer from "./components/AuthLayer";
 
 function App() {
   return (
@@ -15,8 +15,9 @@ function App() {
       <header className="App-header">
       Six Jars
       </header>
+
+      <AuthLayer/>
       <div className="bottom-jar">
-     
       <VisContainer />
       <hr className="half-line"/>
         <Deposit/>

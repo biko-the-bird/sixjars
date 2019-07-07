@@ -9,7 +9,10 @@ describe('App', () => {
     expect(app).toMatchSnapshot();
   });
 
+  it('contains a AuthLayer component', () => {
+    expect(app.find('AuthLayer').exists()).toBe(true);
   
+  });
   it('contains a Connect(Deposit) component', () => {
     expect(app.find('Connect(Deposit)').exists()).toBe(true);
   });

@@ -46,5 +46,8 @@
       "!src/index.js",
       "!src/tempPolyfills.js"
     ]
+  },
+  "devDependencies": {
+    "gun": "^0.2019.627"
   }
 }

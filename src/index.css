@@ -86,6 +86,48 @@ button, input {
  
 }
 
+.backdrop {
+ 
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.7);
+  overflow-x: hidden;
+}
+
+.auth-modal {
+
+  margin: auto;
+  padding: 20px;
+  width: 60%;
+  margin-top: 5%;
+
+}
+
+.ghost {
+  color: white !important;
+  border-color: white !important;  
+  font-size: 50px;
+}
+.ghost-input {
+
+  font-size: 20px;
+ color: white;
+background-color: transparent; 
+border-style: solid; 
+border-width: 0px 0px 3px 0px; 
+border-color: white
+}
+.ghost-button {
+  color: black !important;  
+  font-size: 50px;
+  padding: 10px;
+  
+}
 
 
 .footer-copyright {
